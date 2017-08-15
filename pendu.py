@@ -33,9 +33,23 @@ for lettres in mot: #Créer un mot avec des étoiles avec la meme longueur
                     #que le mot à deviner
     motCache = motCache + '*'
 
-print('Mot à deviner : ', motCache)
 
-lettreJoueur = input('Entrer une lettre :')
-a = mot.find(lettreJoueur)
-if a < 0:
-    print('Il n\' a pas de ', lettreJoueur, 'dans le mot')
+
+i = NbrofChances()
+coup = 0
+
+while coup < i :
+    print('Mot à deviner : ', motCache)
+    lettreJoueur = input('Entrer une lettre :')
+    a = mot.find(lettreJoueur)
+    if a < 0:
+        print('Il n\' a pas de ', lettreJoueur, 'dans le mot')
+        coup = coup + 1
+    else :
+        print("Bien")
+        print("")
+        motCache = ModifyString(motCache, a, lettreJoueur)
+
+            
+            
+        

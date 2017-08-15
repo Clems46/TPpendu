@@ -61,8 +61,16 @@ def changeScores(Name, score):
     b = save(a)
     return b
 
-def findLetter(word, letter):
-    a = word.find(letter)
-    return a
-
+def ModifyString(word, position, letter):
+    """Remplace une lettre du mot word à la position
+position par la lettre letter"""
+    
+    i = 0
+    a =[]
+    
+    for element in word:
+        a.append(word[i])
+        i += 1
+    a[position] = letter
+    return "".join(a)
 
