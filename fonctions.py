@@ -60,3 +60,9 @@ def changeScores(Name, score):
     a[Name] = score
     b = save(a)
     return b
+
+def findLetter(word, letter):
+    a = word.find(letter)
+    return a
+
+

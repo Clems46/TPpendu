@@ -23,3 +23,19 @@ if a == 1:
 else:
     b = ReturnScore(Name)
     print ('Bienvenue', Name, ', ton score est de ', b)
+
+#Choix du mot
+
+mot = listeMots()
+
+motCache = ''
+for lettres in mot: #Créer un mot avec des étoiles avec la meme longueur
+                    #que le mot à deviner
+    motCache = motCache + '*'
+
+print('Mot à deviner : ', motCache)
+
+lettreJoueur = input('Entrer une lettre :')
+a = mot.find(lettreJoueur)
+if a < 0:
+    print('Il n\' a pas de ', lettreJoueur, 'dans le mot')
