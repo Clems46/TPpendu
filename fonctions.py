@@ -14,18 +14,26 @@ def save(scoresJeu):
 
 def uploadScores():
     """Renvoie le fichier de scores"""
-    with open('scores', 'rb') as fichier:
-        monDepickler = pickle.Unpickler(fichier)
-        scoreRecup = monDepickler.load()
-        return scoreRecup
+    try:
+        with open('scores', 'rb') as fichier:
+            monDepickler = pickle.Unpickler(fichier)
+            scoreRecup = monDepickler.load()
+            return scoreRecup
+    except FileNotFoundError:
+        save({})
+        
+    
 def NameExist(Name):
     """Retourne 1 si le nom existe et 0 si il n'exixte pas"""
-    a = uploadScores()
-    if Name in a.keys():
-        b = 1
-    else:
-        b = 0
-    return b
+    try:
+        a = uploadScores()
+        if Name in a.keys():
+            b = 1
+        else:
+            b = 0
+        return b
+    except FileNotFoundError:
+       save({}) 
 
 def ReturnScore(Name):
     """Retourne le score du joueur Name"""
