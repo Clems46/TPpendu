@@ -38,3 +38,5 @@ Vous avez l'essentiel. Peut-être pas tout ce dont vous avez besoin, cela dépen
 Encore une fois, c'est un exercice pratique, ne sautez pas à la correction tout de suite, cela ne vous apprendra pas grand chose.
 
 Bonne chance !
+
+Pour lancer le Pendu, ouvrir seulement pendu.py
