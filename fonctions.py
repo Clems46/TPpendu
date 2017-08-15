@@ -20,10 +20,12 @@ def uploadScores():
         return scoreRecup
 def NameExist(Name):
     """Retourne 1 si le nom existe et 0 si il n'exixte pas"""
-    with open('scores', 'rb') as fichier:
-        monDepickler = pickle.Unpickler(fichier)
-        scoreRecup = monDepickler.load()
-#Pas complet
+    a = uploadScores()
+    if Name in a.keys():
+        b = 1
+    else:
+        b = 0
+    return b
 
 def ReturnScore(Name):
     """Retourne le score du joueur Name"""
@@ -31,3 +33,22 @@ def ReturnScore(Name):
         monDepickler = pickle.Unpickler(fichier)
         scoreRecup = monDepickler.load()
     return scoreRecup[Name]
+
+def AddPlayer(Name):
+    a = NameExist(Name)
+    c = 0
+    if a == 0:
+        print("Ajout d'un nouveau joueur ")
+        b = uploadScores()
+        b[Name] = 0
+        save(b)
+        c = 1
+        return c
+    else:
+        c = 0
+        return c
+def changeScores(Name, score):
+    a = uploadScores()
+    a[Name] = score
+    b = save(a)
+    return b
