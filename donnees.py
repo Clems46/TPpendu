@@ -1,7 +1,7 @@
 #Commentaires??
 import random
 def listeMots():
-    '''reourne un mot au hasard dans une liste
+    '''retourne un mot au hasard dans une liste
     pensez a modifier le nombreDeMots si ajout de mots '''
     a = ['igloo', 'poisson', 'matin',
          'bus', 'voiture', 'moto',
