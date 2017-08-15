@@ -1,3 +1,6 @@
+#!/usr/local/bin/python3.6
+# -*-coding:Utf-8 -*
+
 #Commentaires??
 import random
 def listeMots():

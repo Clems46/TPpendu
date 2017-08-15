@@ -1,3 +1,7 @@
+#!/usr/local/bin/python3.6
+# -*-coding:Utf-8 -*
+
+
 #Jeux du pendu
 
 from donnees import *
@@ -49,6 +53,13 @@ while play == 1:
             
         print('Mot à deviner : ', motCache)
         lettreJoueur = input('Entrer une lettre :')
+        
+        if len(lettreJoueur) > 1:       #Controle de la saisie du joueur
+            lettreJoueur = lettreJoueur[0]
+        while len(lettreJoueur) < 1:
+            print('Erreur de saisie, veuillez entrer une lettre')
+            lettreJoueur = input('Entrer une lettre :')
+            
         a = mot.find(lettreJoueur)
         if a < 0:
             print('Il n\' a pas de {} dans le mot'.format(lettreJoueur))
